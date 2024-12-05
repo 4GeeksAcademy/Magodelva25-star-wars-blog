@@ -1,45 +1,56 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			people: [],
+			films: [],
+			planets: [], 
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+			loadMainApiData: () => {					
+				fetch("https://www.swapi.tech/api/people/")
+					.then((resp) => {
+						if (!resp.ok) {
+							throw new Error("Error al añadir la informacion");
+					}
+						return resp.json();
+					})
+					.then(respJson => {
+						const peopleListData = respJson.results;
+                        setStore({ people: peopleListData });
+					})
+					.catch(err => console.error(err))
+					
+				fetch("https://www.swapi.tech/api/films/")
+					.then((resp) => {
+						if (!resp.ok) {
+							throw new Error("Error al añadir la informacion");
+					}
+						return resp.json();
+					})
+					.then(respJson => {
+					const filmListData = respJson.results;
+					setStore({ films: filmListData });
+					})
+					.catch(err => console.error(err))
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+				fetch("https://www.swapi.tech/api/planets/")
+					.then((resp) => {
+						if (!resp.ok) {
+							throw new Error("Error al añadir la informacion");
+					}
+						return resp.json();
+					})
+					.then(respJson => {
+						const planetsListData = respJson.results;
+                        setStore({ planets: planetsListData });
+					})
+					.catch(err => console.error(err))
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
+			},
+
 		}
 	};
 };
+
 
 export default getState;

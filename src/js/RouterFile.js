@@ -1,14 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
-
-import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+import { Home } from "./components/sections/home/home.jsx";
+import { Films } from "./components/sections/films/films.js";
+import { Planets } from "./components/sections/planets/planets.js";
 import injectContext from "./store/appContext";
+import { NavBar } from "./components/navbar/navBar.js"
+import { Footer } from "./components/footer/footer.js"
+import {Routerbar} from "./components/routerBar/routerbar.js"
+import "./RouterFile.css";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+
 
 //create your first component
 const Layout = () => {
@@ -17,20 +18,18 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
+		<main className="container">
 			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
+				<NavBar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
+						<Route path="/films" element={<Films />} />
+						<Route path="/planets" element={<Planets />} />
 					</Routes>
-					<Footer />
-				</ScrollToTop>
+					<Routerbar/>
+					<Footer />	
 			</BrowserRouter>
-		</div>
+		</main>
 	);
 };
 
