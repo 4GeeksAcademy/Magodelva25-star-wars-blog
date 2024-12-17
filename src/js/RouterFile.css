@@ -1,0 +1,24 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+
+    background-color: rgb(2, 0, 17);
+    height: 100vh;
+    font-family: "DIN Next Rounded LT W04 Light";
+
+}
+
+.container {
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

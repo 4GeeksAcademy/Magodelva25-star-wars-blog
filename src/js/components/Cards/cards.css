@@ -1,0 +1,110 @@
+.default-card-content {
+
+    display: flex;
+    background-image: url(https://i.gifer.com/1UGy.gif);
+    background-size:cover;
+    font-size: 1.2rem;
+    color: white;
+    width: 350px;
+    height: 450px;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 10px;
+
+}
+
+.card-content {
+    display: flex;
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-size: 1.2rem;
+    color: white;
+    width: 350px;
+    height: 450px;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.card-content:hover {
+
+    scale: 105%;
+    transition: ease-in;
+    transition-duration: 500ms;
+
+}
+
+
+h6{
+
+    font-family: "DIN Next Rounded LT W04 Medium";
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+
+}
+
+.description {
+
+    display: flex;
+    position: relative;
+    bottom: 0;
+    background-color: white;
+    color: black;
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.btn-actions{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.details-btn{
+
+    display: flex;
+    width: 120px;
+    background-color: #ffca00;
+    text-decoration-line: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    font-size: 1rem;
+    color: black;
+
+}
+
+.details-btn:hover{
+
+   background-color: rgb(2, 2, 2);
+   color: white;
+   text-decoration-line: none;
+   transition: 200ms;
+
+}
+
+.fa-solid {
+
+    color: black;
+
+}
+
+.liked {
+
+    color: red;
+}
+
+
+.fa-solid:hover {
+
+    color: red;
+
+}

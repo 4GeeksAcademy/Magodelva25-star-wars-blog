@@ -1,0 +1,32 @@
+.list-items {
+
+    display: flex; 
+    overflow-x: auto; 
+    white-space: nowrap;
+    align-items: center; 
+    scrollbar-color: transparent transparent;
+    scroll-behavior: smooth;
+    user-select: none;
+    width: 100%; 
+    height: auto; 
+    margin: 30px;
+    position: relative;
+    top: 85px;
+
+}
+
+.list-items:active {
+    cursor: grabbing;
+  }
+
+.list-items::-webkit-scrollbar {
+
+    background-color: transparent;
+}
+
+footer{
+
+    position: absolute;
+    bottom: 0;
+
+}

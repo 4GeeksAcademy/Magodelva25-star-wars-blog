@@ -1,11 +1,50 @@
+
+
+
+
 .header {
 
     width: 80%;
-    background-color: rgb(255, 255, 255);
     display: flex;
     height: 96px;
     margin: auto;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 50px;
+    font-family: 'Star Wars', sans-serif;
+    
+}
+
+.header > a {
+    color: rgb(245, 221, 3);
+    text-decoration-line: none;
+    opacity: 0.4;
+    transition: 1500ms;
+}
+
+.header > a:hover {
+
+    opacity:1;
+
+}
+
+.header > a:active {
+
+    color:rgb(49, 187, 252)
+
+}
+
+.logo > img {
+
+    max-width: 150px;
+
+}
+
+.logo > img:hover {
+
+    transform: matrix3d(1,1);
 
 }

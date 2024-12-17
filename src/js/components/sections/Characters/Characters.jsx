@@ -1,9 +1,13 @@
-import React, { useRef, useState } from "react";
-import { Cards } from "../../itemCards/cards.js";
-import "./home.css";
+import React, { useRef, useContext, useState } from "react";
+import { Cards } from "../../Cards/cards.jsx";
+import "./../styles/common-styles.css";
+import { Context } from "../../../store/appContext.js"
 
-export const Home = () => {
-   
+
+export const Characters = () => {
+
+    const { store } = useContext(Context);
+    
     const itemsRef = useRef(null);
     const [ isMouseDown, setIsMouseDown ] = useState(false);
     const [ startX, setStartX ] = useState(0);
@@ -32,12 +36,26 @@ export const Home = () => {
     }
 
     return (
+
         <div className="list-items" ref={itemsRef}
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}>
-            <Cards />
+            {
+                store.people.map((person) => {
+                    return (
+                        <Cards
+                            key={person.uid + person.name}
+                            uid={person.uid}
+                            type="person"  
+                            name={person.name}
+                            link={`/people/${person.uid}`}  
+                        />
+                    );
+                })
+            }
         </div>
+
     );
-};
+}
