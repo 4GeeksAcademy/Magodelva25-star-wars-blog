@@ -1,6 +1,6 @@
 import React, { useRef, useState, useContext } from "react";
 import { Cards } from "../../Cards/cards.jsx";
-import "./../styles/common-styles.css";
+import "./../../../styles/common-styles.css";
 import { Context } from "../../../store/appContext.js"
 
 export const Species = () => {
@@ -48,7 +48,7 @@ export const Species = () => {
                                  uid={spec.uid}
                                  type="species"  
                                  name={spec.name}
-                                 link={`/details/species/${spec.uid}`}
+                                 link={`/species/${spec.uid}`}
                                  function={""}  
                              />
                          );

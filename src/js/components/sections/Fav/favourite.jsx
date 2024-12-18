@@ -1,6 +1,6 @@
 import React, { useRef, useState, useContext } from "react";
 import { FavCards } from "../../Cards/favouriteCard.jsx";
-import "./../styles/common-styles.css";
+import "./../../../styles/common-styles.css";
 import { Context } from "../../../store/appContext.js"
 
 export const Favourites = () => {

@@ -1,0 +1,67 @@
+.wrapper {
+
+    margin-top: 50px;
+    display: flex;
+    width: 80%;
+    height: 600px;
+    flex-direction: row;
+    font-family: 'Roboto';
+    margin-inline: auto;
+    justify-content: center;
+    overflow: auto;
+
+}
+
+.card-description {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    flex-direction: row;
+    font-family: 'Roboto';
+    justify-content: space-around;
+}
+
+
+.film-img {
+
+    width: 60%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.details-description {
+    display: flex;
+        bottom: 0;
+        color: black;
+        padding: 2rem;
+        flex-direction: column;
+        width: 650px;
+}
+
+.director {
+
+    font-family: "DIN Next Rounded LT W04 Medium";
+    font-size: 1.3rem;
+
+}
+
+.details-description > ul > li{
+
+    list-style: none;
+    color: white;
+
+}
+
+.details-description > ul > li > h4 {
+
+    font-size: 2.2rem;
+
+}
+
+.details-description > ul > li > p {
+
+    font-family: "DIN Next Rounded LT W04 Light";
+    font-size: 1.2rem;
+    word-break: break-all;
+}

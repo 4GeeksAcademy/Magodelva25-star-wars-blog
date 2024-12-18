@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import "./FilmDetails.css"
+import "./../../../../styles/details-styles.css"
 import { getFilmImageClass } from "./../../../../../img/resourcesImg.js";
 
 export const FilmDetails = () => {
@@ -27,37 +27,25 @@ export const FilmDetails = () => {
     backgroundImageUrl = getFilmImageClass(filmData.title);
   }
 
-
-return (
+  return (
     <>
-      {filmData ? (
-        <div className="wrapper">
-          <div className="film-card" >
-            <img className="film-card-img" style={{backgroundImage: `url(${backgroundImageUrl})`}}/>
-          </div>
-          <div className="content">
-            
-            <ul>
-              <li>
-                <h4>{filmData.title}</h4>
-              </li>
-              <li>
-                <p className="director">{filmData.director} - {filmData.release_date}</p>
-              </li>
-              <li>
-                <p>{filmData.opening_crawl}</p>
-              </li>
-              <li>
-                <p>{filmData.characters.name}</p>
-              </li>
+    {filmData ? (
+      <div className="wrapper">
+        <div className="card-description">
+          <div className="film-img" style={{ backgroundImage: `url(${backgroundImageUrl})` }}/>
+          <div className="details-description">
+          <ul>
+            {Object.entries(filmData).map(([key, value]) => (
+                  <li key={key}>
+                    <p><strong style={{opacity: 0.3}}>{key}:</strong> {value}</p> 
+                  </li>
+                ))}
             </ul>
-            
-            
           </div>
-          
         </div>
+      </div>
       ) : (
-        <p>Loading...</p>
+        <p className="loading">Loading...</p>
       )}
     </>
   )

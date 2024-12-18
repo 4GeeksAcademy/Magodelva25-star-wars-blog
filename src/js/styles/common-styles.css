@@ -1,17 +1,18 @@
 .list-items {
 
-    display: flex; 
-    overflow-x: auto; 
+    display: flex;
+    overflow-x: auto;
     white-space: nowrap;
-    align-items: center; 
+    align-items: center;
     scrollbar-color: transparent transparent;
     scroll-behavior: smooth;
     user-select: none;
-    width: 100%; 
-    height: auto; 
-    margin: 30px;
+    width: 90%;
+    height: auto;
+    margin-top: 50px;
     position: relative;
-    top: 85px;
+    margin-inline: auto;
+    justify-self: center;
 
 }
 

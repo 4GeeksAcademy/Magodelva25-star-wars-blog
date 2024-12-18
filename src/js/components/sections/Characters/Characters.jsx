@@ -1,6 +1,6 @@
 import React, { useRef, useContext, useState } from "react";
 import { Cards } from "../../Cards/cards.jsx";
-import "./../styles/common-styles.css";
+import "./../../../styles/common-styles.css";
 import { Context } from "../../../store/appContext.js"
 
 

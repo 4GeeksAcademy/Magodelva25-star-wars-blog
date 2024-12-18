@@ -1,7 +1,7 @@
 import React, { useRef, useState, useContext } from "react";
 import { Cards } from "../../Cards/cards.jsx";
 import { Context } from "../../../store/appContext.js";
-import "./../styles/common-styles.css";
+import "./../../../styles/common-styles.css";
 
 export const Planets = () => {
 

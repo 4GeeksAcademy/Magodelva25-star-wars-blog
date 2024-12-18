@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import "./planetsDetails.css";
+import "./../../../../styles/details-styles.css";
 import { getPlanetsImageClass } from "./../../../../../img/resourcesImg.js";
 
 export const PlanetDetails = () => {
@@ -28,24 +28,23 @@ export const PlanetDetails = () => {
   }
 
 
-return (
+  return (
     <>
-      {planetData ? (
-        <div className="wrapper">
-          <div className="film-card" >
-            <img className="film-card-img" style={{backgroundImage: `url(${backgroundImageUrl})`}}/>
+    {planetData ? (
+      <div className="wrapper">
+        <div className="card-description">
+          <div className="film-img" style={{ backgroundImage: `url(${backgroundImageUrl})` }}/>
+          <div className="details-description">
+          <ul>
+            {Object.entries(planetData).map(([key, value]) => (
+                  <li key={key}>
+                    <p><strong style={{opacity: 0.3}}>{key}:</strong> {value}</p> 
+                  </li>
+                ))}
+            </ul>
           </div>
-          <div className="content">
-            <ul>
-                <li><h4>{planetData.name}</h4></li>
-                <li>{planetData.population}</li>
-                <li>{planetData.terrain}</li>
-                <li>{planetData.diameter}</li>
-                <li>{planetData.population}</li>
-            </ul>   
-          </div>
-          
         </div>
+      </div>
       ) : (
         <p className="loading">Loading...</p>
       )}

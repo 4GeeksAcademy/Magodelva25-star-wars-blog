@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import "./characterDetails.css";
+import "./../../../../styles/details-styles.css";
 import { getPeopleImageClass } from "./../../../../../img/resourcesImg.js";
 
 export const CharDetails = () => {
 
   const params = useParams()
-  const [peopleData, setPeoplemData] = useState();
+  const [peopleData, setPeopleData] = useState();
 
   useEffect(() => {
     fetch(`https://www.swapi.tech/api/people/${params.id}`)
@@ -17,7 +17,7 @@ export const CharDetails = () => {
         return resp.json();
       })
       .then((respJson) => {
-        setPeoplemData(respJson.results.properties);
+        setPeopleData(respJson.result.properties);
       })
       .catch((err) => console.error(err));
   }, [params.id]);
@@ -28,30 +28,23 @@ export const CharDetails = () => {
   }
 
 
-return (
+  return (
     <>
-      {peopleData ? (
-        <div className="wrapper">
-          <div className="film-card" >
-            <img className="film-card-img" style={{backgroundImage: `url(${backgroundImageUrl})`}}/>
-          </div>
-          <div className="content">
-            
+    {peopleData ? (
+      <div className="wrapper">
+        <div className="card-description">
+          <div className="film-img" style={{ backgroundImage: `url(${backgroundImageUrl})` }}/>
+          <div className="details-description">
             <ul>
-              <li>
-                <h4>{peopleData.name}</h4>
-              </li>
-              <li>
-                <p>{peopleData.gender} - {peopleData.height} - {peopleData.hair_color} </p>
-              </li>
-              <li>
-                <p>{peopleData.homeworld}</p>
-              </li>
+            {Object.entries(peopleData).map(([key, value]) => (
+                  <li key={key}>
+                    <p><strong style={{opacity: 0.3}}>{key}:</strong> {value}</p> 
+                  </li>
+                ))}
             </ul>
-                      
           </div>
-          
         </div>
+      </div>
       ) : (
         <p className="loading">Loading...</p>
       )}

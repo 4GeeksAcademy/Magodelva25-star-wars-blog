@@ -7,7 +7,9 @@ import { FilmDetails } from "./components/sections/details/FilmsDetails/FilmDeta
 import { Planets } from "./components/sections/planets/planets.jsx";
 import { PlanetDetails } from "./components/sections/details/PlanetsDetails/planetsDetails.jsx";
 import { Starships } from "./components/sections/Starships/starships.jsx";
+import { StarshipsDetails } from "./components/sections/details/Starships/starShipsDetails.jsx";
 import { Species } from "./components/sections/Species/species.jsx";
+import { SpeciesDetails } from "./components/sections/details/SpeciesDetails/speciesDetails.jsx"
 import { Favourites } from "./components/sections/Fav/favourite.jsx";
 import injectContext from "./store/appContext.js";
 import { NavBar } from "./components/navbar/navBar.jsx"
@@ -24,7 +26,7 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<main className="container">
+		<div className="container">
 			<BrowserRouter basename={basename}>
 				<NavBar />
 				<Routes>
@@ -33,14 +35,16 @@ const Layout = () => {
 					<Route path="/planets" element={<Planets />} />
 					<Route path="/planets/:id/" element={<PlanetDetails />} />
 					<Route path="/starships" element={<Starships />} />
+					<Route path="/starships/:id/" element={<StarshipsDetails />} />
 					<Route path="/people/:id/" element={<CharDetails />} />
 					<Route path="/films/:id/" element={<FilmDetails />} />
 					<Route path="/species" element={<Species />} />
+					<Route path="/species/:id" element={<SpeciesDetails />} />
 					<Route path="/fav/" element={<Favourites />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>
-		</main>
+		</div>
 	);
 };
 
