@@ -6,7 +6,7 @@ import SW_Logo from "./../../../img/SW_Logo.png"
 
 export const NavBar = () => {
   return (
-    <header className='header'>  
+    <div className='header'>  
           <Link to="/">People</Link>
           <Link to="/films">Films</Link>
           <Link to="/planets">Planets</Link>
@@ -16,6 +16,8 @@ export const NavBar = () => {
           <Link to="/starships">Starships</Link>
           <Link to="/species">Species</Link>
           <Link to="/fav">Favs</Link>
-    </header>
+    </div>
+
+
   )
 }
